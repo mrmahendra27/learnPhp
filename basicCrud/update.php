@@ -75,7 +75,7 @@ if (isset($_POST['submit'])) {
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-md">
-                <a class="navbar-brand" href="index.php">Home</a>
+                <a class="navbar-brand" href="index.php">Products List</a>
                 <a class="navbar-brand" href="create.php">Add Product</a>
             </div>
         </nav>

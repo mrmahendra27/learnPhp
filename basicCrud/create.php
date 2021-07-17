@@ -25,8 +25,8 @@ if (isset($_POST['submit'])) {
         $errors['error_price'] = 'Product Price is Required';
     }
 
-    if(!empty($image) && $image['tmp_name']){
-        if(!is_dir('images')){
+    if (!empty($image) && $image['tmp_name']) {
+        if (!is_dir('images')) {
             mkdir('images');
         }
 
@@ -63,7 +63,7 @@ if (isset($_POST['submit'])) {
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-md">
-                <a class="navbar-brand" href="index.php">Home</a>
+                <a class="navbar-brand" href="index.php">Products List</a>
             </div>
         </nav>
         <h4 class="text-center">Add Product</h4>

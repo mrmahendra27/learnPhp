@@ -1,7 +1,6 @@
 <?php
 
 include_once 'connection.php';
-
 //delete
 if (isset($_POST['delete'])) {
     $id = $_POST['id'];
@@ -15,8 +14,17 @@ if (isset($_POST['delete'])) {
     // echo  'Deleted';
 }
 
+//search
+$search = $_GET['search'] ?? '';
 
-$statement = $pdo->prepare('SELECT * FROM products');
+if($search){
+    $statement = $pdo->prepare('SELECT * FROM products WHERE title LIKE :title ORDER BY created_at DESC');
+    $statement->bindValue(':title', "%$search%");
+}else{
+    $statement = $pdo->prepare('SELECT * FROM products ORDER BY created_at DESC');
+}
+
+
 $statement->execute();
 
 $products = $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -39,7 +47,7 @@ $products = $statement->fetchAll(PDO::FETCH_ASSOC);
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-md">
-                <a class="navbar-brand" href="index.php">Home</a>
+                <a class="navbar-brand" href="index.php">Products List</a>
             </div>
         </nav>
         <h4 class="text-center">Products</h4>
@@ -47,6 +55,12 @@ $products = $statement->fetchAll(PDO::FETCH_ASSOC);
             <a href="create.php" class="btn btn-success">Add Product</a>
         </div>
         <table class="table">
+            <div class="input-group mb-3">
+                <form action="index.php" method="get">
+                    <input type="text" autocomplete="off" name="search" value="<?php echo $search ?? '' ?>" class="form-control" placeholder="Search" aria-label="Search for products" aria-describedby="basic-addon1">
+                    <button type="submit" class="btn btn-outline-primary">Search</button>
+                </form>
+            </div>
             <thead>
                 <tr>
                     <th scope="col">#</th>
