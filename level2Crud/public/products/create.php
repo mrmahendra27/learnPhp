@@ -1,6 +1,6 @@
 <?php
 
-include_once '../db/connection.php';
+include_once '../../db/connection.php';
 
 $title = $description = $price = $image = '';
 $errors = array(
@@ -11,7 +11,10 @@ $errors = array(
 );
 
 if (isset($_POST['submit'])) {
-    require_once 'validate.php';
+
+    $img = '';
+
+    require_once '../../views/validate.php';
 
     if (!empty($image) && $image['tmp_name']) {
         if (!is_dir('images')) {
@@ -34,10 +37,10 @@ if (isset($_POST['submit'])) {
 
 ?>
 
-<?php include_once 'partials/header.php' ?>
+<?php include_once '../../views/partials/header.php' ?>
 
 <h4 class="text-center">Add Product</h4>
 
-<?php include_once 'form.php'?>
+<?php include_once '../../views/form.php' ?>
 
-<?php include_once 'partials/footer.php' ?>
+<?php include_once '../../views/partials/footer.php' ?>

@@ -1,7 +1,7 @@
 <?php
 
 /** @var $pdo \PDO */
-include_once '../db/connection.php';
+include_once '../../db/connection.php';
 
 $id = $_GET['id'] ?? null;
 
@@ -29,8 +29,10 @@ $errors = array(
 );
 
 if (isset($_POST['submit'])) {
+
+    $img = $product['image'] ?? null;
     
-    require_once 'validate.php';
+    require_once '../../views/validate.php';
 
     if (!empty($image) && $image['tmp_name']) {
         if ($img) {
@@ -52,13 +54,13 @@ if (isset($_POST['submit'])) {
 
 ?>
 
-<?php include_once 'partials/header.php' ?>
+<?php include_once '../../views/partials/header.php' ?>
 
 <br>
 <a href="index.php" class="btn btn-success">Products List</a>
 
 <h4 class="text-center">Update Product for <strong><?php echo $title ?></strong></h4>
 
-<?php include_once 'form.php' ?>
+<?php include_once '../../views/form.php' ?>
 
-<?php include_once 'partials/footer.php' ?>
+<?php include_once '../../views/partials/footer.php' ?>

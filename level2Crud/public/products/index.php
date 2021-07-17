@@ -1,6 +1,6 @@
 <?php
 
-include_once '../db/connection.php';
+include_once '../../db/connection.php';
 //delete
 if (isset($_POST['delete'])) {
     $id = $_POST['id'];
@@ -31,7 +31,7 @@ $products = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 
-<?php include_once 'partials/header.php' ?>
+<?php include_once '../../views/partials/header.php' ?>
 
 <h4 class="text-center">Products</h4>
 <div class="d-grid gap-2 d-md-flex justify-content-md-end" style="margin-bottom: 10px;">
@@ -76,4 +76,4 @@ $products = $statement->fetchAll(PDO::FETCH_ASSOC);
     </tbody>
 </table>
 
-<?php include_once 'partials/footer.php' ?>
+<?php include_once '../../views/partials/footer.php' ?>
