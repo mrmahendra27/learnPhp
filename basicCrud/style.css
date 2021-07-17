@@ -1,0 +1,12 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.thumb-image{
+    width: 50px;
+}
+
+.update-image{
+    width: 120px;
+}
