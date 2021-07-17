@@ -39,8 +39,8 @@ if (isset($_POST['submit'])) {
     }
 
     if (!empty($image) && $image['tmp_name']) {
-        if (!is_dir('images')) {
-            mkdir('images');
+        if($img){
+           unlink($img); 
         }
         $img = 'images/' . $title . rand(10000, 99999) . $image['name'];
         move_uploaded_file($image['tmp_name'], $img);
