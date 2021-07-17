@@ -51,7 +51,7 @@ $products = $statement->fetchAll(PDO::FETCH_ASSOC);
             </div>
         </nav>
         <h4 class="text-center">Products</h4>
-        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end" style="margin-bottom: 10px;">
             <a href="create.php" class="btn btn-success">Add Product</a>
         </div>
         <table class="table">

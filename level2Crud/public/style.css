@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.outer-container {
+    background-color: tomato;
+    width: 100%;
+  }
+  .container {
+    background: lightblue;
+  }
+  @media (max-width: 1200px) {
+    .container {
+      width: 75%;
+    }
+  }
+  
+.thumb-image{
+    width: 50px;
+}
+
+.update-image{
+    width: 120px;
+    margin-top: 10px;
+}
