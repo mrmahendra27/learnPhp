@@ -29,6 +29,7 @@ $errors = array(
 );
 
 if (isset($_POST['submit'])) {
+    
     require_once 'validate.php';
 
     if (!empty($image) && $image['tmp_name']) {
@@ -52,6 +53,9 @@ if (isset($_POST['submit'])) {
 ?>
 
 <?php include_once 'partials/header.php' ?>
+
+<br>
+<a href="index.php" class="btn btn-success">Products List</a>
 
 <h4 class="text-center">Update Product for <strong><?php echo $title ?></strong></h4>
 
